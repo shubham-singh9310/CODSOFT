@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Calculator - By Shubham Singh</title>
+    <style>
+        body {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            height: 97vh;
+            background-color: #000000;
+        }
+
+        .calculator {
+            width: 300px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .display {
+            width: 100%;
+            height: 50px;
+            text-align: right;
+            padding: 10px;
+            font-size: 44px;
+            background-color: #fff;
+            color: black;
+            border: none;
+            outline: none;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .delete-btn i {
+            font-size: 22px;
+        }
+
+        button {
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            background: #0D7E83;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #000000;
+            color: white;
+        }
+
+        button.operator:hover {
+            background-color: #000000;
+            color: #fff;
+        }
+
+        button.operator {
+            background: #ff9500;
+            color: white;
+            font-weight: bold;
+        }
+
+        button.equals {
+            background: #4caf50;
+            color: white;
+            grid-column: span 2;
+        }
+        .header {
+            font-size: 44px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff;
+            text-align: center;
+            margin-top: -30%;
+            margin-bottom: -100px;
+        }
+        .footer {
+            margin-bottom: -40px;
+            margin-left: 12px;
+            font-size: 18px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">Calculator</div>
+    <div class="calculator">
+        <input type="text" class="display" id="display" disabled>
+        <div class="buttons">
+            <button onclick="clearDisplay()">AC</button>
+            <button onclick="appendValue('/')" class="operator">/</button>
+            <button onclick="appendValue('*')" class="operator">*</button>
+            <button onclick="deleteLast()" class="delete-btn">
+                <i class="fa-solid fa-delete-left"></i>
+            </button>
+            <button onclick="appendValue('7')">7</button>
+            <button onclick="appendValue('8')">8</button>
+            <button onclick="appendValue('9')">9</button>
+            <button onclick="appendValue('-')" class="operator">-</button>
+            <button onclick="appendValue('4')">4</button>
+            <button onclick="appendValue('5')">5</button>
+            <button onclick="appendValue('6')">6</button>
+            <button onclick="appendValue('+')" class="operator">+</button>
+            <button onclick="appendValue('1')">1</button>
+            <button onclick="appendValue('2')">2</button>
+            <button onclick="appendValue('3')">3</button>
+            <button onclick="appendValue('-')" class="operator">+/-</button>
+            <button onclick="appendValue('0')">0</button>
+            <button onclick="appendValue('.')">.</button>
+            <button onclick="calculateResult()" class="equals">=</button>
+        </div>
+    </div>
+    <div class="footer">&copy; 2025 Shubham Singh. All Rights Reserved.</div>
+
+    <script>
+        const display = document.getElementById("display");
+
+        function appendValue(value) {
+            display.value += value;
+        }
+
+        function clearDisplay() {
+            display.value = "";
+        }
+
+        function deleteLast() {
+            display.value = display.value.slice(0, -1);
+        }
+
+        function calculateResult() {
+            try {
+                display.value = eval(display.value);
+            } catch {
+                display.value = "Error";
+            }
+        }
+
+        document.addEventListener("keydown", function (event) {
+            const key = event.key;
+            if (!isNaN(key) || "+-*/.".includes(key)) {
+                appendValue(key);
+            } else if (key === "Enter") {
+                event.preventDefault(); // Prevent form submission if inside a form
+                calculateResult();
+            } else if (key === "Backspace") {
+                deleteLast();
+            } else if (key === "Delete") {
+                clearDisplay();
+            }
+        });
+    </script>
+</body>
+
+</html>

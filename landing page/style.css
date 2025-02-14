@@ -1,0 +1,225 @@
+.hero {
+    position: relative; 
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    color: white; 
+    overflow: hidden; 
+    background: rgba(0, 0, 0, 0.4);
+}
+.hero-image {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    z-index: -1; 
+}
+.title{
+    color: white;
+    font-size: 24px;
+}
+.header{
+    background: black;
+}
+nav {
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+    padding: 10px 20px; 
+}
+.nav-icon{
+    font-size: 18px;
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+.nav-icon:hover{
+    background-color: #ffc107;
+    color: #fff;
+    border-radius: 10px;
+    padding: 0 10px;
+    font-size: 18px;
+    transform: scale(1.1);
+}
+.btn1{
+    background-color: #ffc107;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 20px;
+    margin-left: 20px;
+    margin-right: -80px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+.btn1:hover{
+    transform: scale(1.1);
+}
+.btn2{
+    background-color: #ffc107; /* Light gray background */
+    margin-right: 20px;
+    color: #212529; /* Dark text color */
+    border: 1px solid #ddd; /* Light border */
+    padding: 10px 20px; /* Padding for size */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+}
+.btn2:hover{
+    background-color: #FFF; /* Slightly darker gray on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.btn3{
+    background-color: #fff; /* Light gray background */
+    color: #212529; /* Dark text color */
+    border: 1px solid #ddd; /* Light border */
+    padding: 10px 20px; /* Padding for size */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+}
+.btn3:hover{
+    background-color: #ffc107; /* Slightly darker gray on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+
+/* General styling for the services section */
+.services {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Grid layout for service cards */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Styling for each service card */
+.service-card {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.service-image {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Text styling */
+.service-card h5 {
+    font-size: 1.25rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.service-card p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.services, .about {
+    padding: 60px 20px;
+}
+.black{
+    color: #ffc107
+}
+.card {
+    border: none;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Contact Information */
+.footer-contact h3,
+.footer-social h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Social Icons */
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-icon {
+    font-size: 20px;
+    display: inline-block;
+    margin: 0 10px;
+    color: #ffc107;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2); /* Enlarge icon on hover */
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
